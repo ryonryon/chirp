@@ -1,3 +1,5 @@
+import "tailwindcss/tailwind.css";
+
 const addParameters = require("@storybook/react").addParameters;
 
 addParameters({
