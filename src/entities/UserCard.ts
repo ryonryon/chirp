@@ -3,5 +3,5 @@ export default interface UserCard {
   avatarImg: string;
   title: string;
   content?: string;
-  time?: string;
+  time?: Date;
 }

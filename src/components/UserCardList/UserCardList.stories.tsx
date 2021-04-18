@@ -1,5 +1,4 @@
 import { action } from "@storybook/addon-actions";
-import { text } from "@storybook/addon-knobs";
 import React from "react";
 import UserCardList from "./UserCardList";
 
@@ -12,36 +11,36 @@ export const example = () => {
     <UserCardList
       users={[
         {
-          userId: "fjalekjfgaljlartjrtjl",
+          userId: "fjalekjafgaljlartsjrtjl",
           avatarImg:
             "https://lh3.googleusercontent.com/a-/AOh14GhscYYoGxu2XxUviEBRbS09W18POIsnE2xzYj7PQg=s96-c-rg-br100",
           title: "Ryo Togashi",
           content: "buy one get one",
-          time: "18:01",
+          time: new Date(),
         },
         {
-          userId: "fjalekjfgaljlartjrtjl",
+          userId: "fjalekjfsgaljlartjrtjl",
           avatarImg:
             "https://lh3.googleusercontent.com/a-/AOh14GhscYYoGxu2XxUviEBRbS09W18POIsnE2xzYj7PQg=s96-c-rg-br100",
           title: "Ryo Togashi",
           content: "buy one get one",
-          time: "18:01",
+          time: new Date(),
         },
         {
-          userId: "fjalekjfgaljlartjrtjl",
+          userId: "fjalekjfgalfjlartjrtjl",
           avatarImg:
             "https://lh3.googleusercontent.com/a-/AOh14GhscYYoGxu2XxUviEBRbS09W18POIsnE2xzYj7PQg=s96-c-rg-br100",
           title: "Ryo Togashi",
           content: "buy one get one",
-          time: "18:01",
+          time: new Date(),
         },
         {
-          userId: "fjalekjfgaljlartjrtjl",
+          userId: "fjalekjfgaljlartjrftjl",
           avatarImg:
             "https://lh3.googleusercontent.com/a-/AOh14GhscYYoGxu2XxUviEBRbS09W18POIsnE2xzYj7PQg=s96-c-rg-br100",
           title: "Ryo Togashi",
           content: "buy one get one",
-          time: "18:01",
+          time: new Date(),
         },
       ]}
       onClick={action("onClick")}
