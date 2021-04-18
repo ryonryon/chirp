@@ -1,4 +1,3 @@
-import { text } from "@storybook/addon-knobs";
 import React from "react";
 import ChatList from "./ChatList";
 
@@ -32,7 +31,7 @@ export const example = () => {
 
   return (
     <ChatList
-      myId={text("myId", "dfjwlakfj34")}
+      myId="dfjwlakfj34"
       chats={[
         {
           userId: "dfjwlakfj34",
