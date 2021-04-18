@@ -1,4 +1,4 @@
-import { text } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 import React from "react";
 import TextField from "./TextField";
 
@@ -7,5 +7,7 @@ export default {
 };
 
 export const example = () => {
-  return <TextField placeholder=" Enter a message" />;
+  return (
+    <TextField placeholder=" Enter a message" onEnter={action("onEnter")} />
+  );
 };
