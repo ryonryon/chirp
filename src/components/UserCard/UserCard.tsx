@@ -1,5 +1,6 @@
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useMemo } from "react";
 import UserCardType from "../../entities/UserCard";
+import formatTime from "../../utils/formatTime";
 
 export interface Props {
   userCard: UserCardType;
@@ -7,6 +8,8 @@ export interface Props {
 }
 
 export default function UserCard({ userCard, onClick }: Props) {
+  const time = useMemo(() => formatTime(userCard.time), [userCard.time]);
+
   return (
     <div
       className="container flex flex-nowrap cursor-pointer"
@@ -23,11 +26,11 @@ export default function UserCard({ userCard, onClick }: Props) {
       <div className="flex-grow my-2.5 flex flex-nowrap flex-col justify-center">
         <h3 className="text-sm">{userCard.title}</h3>
 
-        <p className="text-xs">{userCard.content}</p>
+        <p className="text-xs font-light">{userCard.content}</p>
       </div>
 
       <div className="flex-none my-2.5">
-        <span className="text-xs">{userCard.time}</span>
+        <span className="text-xs font-light">{time}</span>
       </div>
     </div>
   );
