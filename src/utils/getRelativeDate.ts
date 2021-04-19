@@ -1,7 +1,12 @@
-export default function getRelativeDate(baseDate: Date): string {
+import getFormatDay from "./getFormatDay";
+
+export default function getRelativeDate(_baseDate: Date): string {
+  const baseDate = new Date(
+    `${_baseDate.getFullYear()}/${_baseDate.getMonth()}/${_baseDate.getDate()}`
+  );
   const _today = new Date();
   const today = new Date(
-    `${_today.getFullYear()}/${baseDate.getMonth()}/${baseDate.getDate()}`
+    `${_today.getFullYear()}/${_today.getMonth()}/${_today.getDate()}`
   );
 
   const diff = (baseDate.getTime() - today.getTime()) / 86400000;
@@ -9,31 +14,11 @@ export default function getRelativeDate(baseDate: Date): string {
   if (diff === 0) return "Today";
   if (diff === -1) return "Yesterday";
 
-  const day = (() => {
-    const _day = baseDate.getDay();
-
-    switch (_day) {
-      case 0:
-        return "Sun";
-      case 1:
-        return "Mon";
-      case 2:
-        return "Tue";
-      case 3:
-        return "Wed";
-      case 4:
-        return "Thu";
-      case 5:
-        return "Fri";
-      case 6:
-        return "Sat";
-    }
-  })();
-
+  const day = getFormatDay(baseDate.getDay());
   const month = baseDate.getMonth() + 1;
-  const date = baseDate.getDate();
   const year = baseDate.getFullYear();
   const thisYear = today.getFullYear();
+  const date = baseDate.getDate();
 
   return year === thisYear
     ? `${month}/${date}, ${day}`
