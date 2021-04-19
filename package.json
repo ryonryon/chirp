@@ -2,12 +2,30 @@
   "name": "chirp",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/*.test.ts"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "story": "start-storybook -p 6006",
-    "build:story": "build-storybook -o build/storybook"
+    "build:story": "build-storybook -o build/storybook",
+    "test": "jest"
   },
   "dependencies": {
     "@storybook/addon-actions": "^6.2.8",
@@ -20,12 +38,15 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.22",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "autoprefixer": "^10.2.5",
+    "jest": "^26.6.3",
     "postcss": "^8.2.10",
     "tailwindcss": "^2.1.1",
+    "ts-jest": "^26.5.5",
     "typescript": "^4.2.4"
   }
 }
